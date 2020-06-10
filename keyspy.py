@@ -1,27 +1,20 @@
 import keyboard   # pip install keyboard
-import win32gui   # pip install cd .\
 import datetime
 
 DATA_SEP = '|'
 SESSION_START = datetime.datetime.now()
 QUIT_KEY = 'ctrl+shift+q'
-last_win_title = win32gui.GetWindowText(win32gui.GetForegroundWindow())
 
 log = []
 
 
 def main_hook(e):
     global last_win_title, log
-    # def windows title
-    curr_win_title = win32gui.GetWindowText(win32gui.GetForegroundWindow())
-    if curr_win_title == last_win_title:
-        curr_win_title = '-'
-    else:
-        last_win_title = curr_win_title
+
     # def time in msec
     diff_in_msec = int((datetime.datetime.now() - SESSION_START).total_seconds() * 1000)
 
-    log.append([e.name, diff_in_msec, curr_win_title])
+    log.append([e.name, diff_in_msec, "-"])
 
 
 def save_to_file():
