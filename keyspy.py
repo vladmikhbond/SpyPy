@@ -1,3 +1,9 @@
+"""
+Записывает только клавиши
+
+"""
+
+
 import keyboard   # pip install keyboard
 import datetime
 
